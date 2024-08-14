@@ -71,6 +71,34 @@ fetch("sidebar.html")
         menu.classList.add("hidden");
       }
     });
+
+    // JavaScript untuk toggle sidebar
+    document.getElementById("burgerMenu").addEventListener("click", function () {
+      document.getElementById("sidebar").classList.toggle("open");
+    });
+
+    // JavaScript untuk toggle mode
+    const modeToggle = document.getElementById("modeToggle");
+    const iconLight = document.getElementById("icon-light");
+    const iconDark = document.getElementById("icon-dark");
+
+    if (modeToggle) {
+      modeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        iconLight.classList.toggle("hidden");
+        iconDark.classList.toggle("hidden");
+      });
+    }
+
+    // Kode untuk fetch sidebar
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    if (hamburger) {
+      hamburger.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    }
   });
 
 // Setup awal ketika halaman dimuat
