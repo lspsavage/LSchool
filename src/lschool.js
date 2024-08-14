@@ -72,6 +72,7 @@ fetch("sidebar.html")
       }
     });
 
+    //Burger Menu - Side Bar
     document.getElementById("burgerMenu").addEventListener("click", function () {
       document.getElementById("sidebar").classList.toggle("-translate-x-full");
       document.getElementById("sidebar-overlay").classList.toggle("hidden");
