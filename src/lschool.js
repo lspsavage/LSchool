@@ -77,18 +77,18 @@ fetch("sidebar.html")
       document.getElementById("sidebar").classList.toggle("open");
     });
 
-    // JavaScript untuk toggle mode
-    const modeToggle = document.getElementById("modeToggle");
-    const iconLight = document.getElementById("icon-light");
-    const iconDark = document.getElementById("icon-dark");
+    // // JavaScript untuk toggle mode
+    // const modeToggle = document.getElementById("modeToggle");
+    // const iconLight = document.getElementById("icon-light");
+    // const iconDark = document.getElementById("icon-dark");
 
-    if (modeToggle) {
-      modeToggle.addEventListener("click", () => {
-        document.body.classList.toggle("dark");
-        iconLight.classList.toggle("hidden");
-        iconDark.classList.toggle("hidden");
-      });
-    }
+    // if (modeToggle) {
+    //   modeToggle.addEventListener("click", () => {
+    //     document.body.classList.toggle("dark");
+    //     iconLight.classList.toggle("hidden");
+    //     iconDark.classList.toggle("hidden");
+    //   });
+    // }
 
     // Kode untuk fetch sidebar
     const hamburger = document.getElementById("hamburger");
