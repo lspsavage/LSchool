@@ -1,8 +1,61 @@
+// Inisialisasi Dark Mode
+const initDarkMode = () => {
+  const storedTheme = localStorage.getItem("theme");
+  const isDarkMode = storedTheme === "dark";
+
+  if (isDarkMode) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+
+  // Update ikon setelah dark mode diterapkan
+  updateIcons(isDarkMode);
+};
+
+// Update ikon berdasarkan mode saat ini
+const updateIcons = (isDarkMode) => {
+  const iconLight = document.getElementById("icon-light");
+  const iconDark = document.getElementById("icon-dark");
+
+  if (iconLight && iconDark) {
+    if (isDarkMode) {
+      iconLight.classList.remove("hidden");
+      iconDark.classList.add("hidden");
+    } else {
+      iconLight.classList.add("hidden");
+      iconDark.classList.remove("hidden");
+    }
+  }
+};
+
+// Toggle dark mode
+const toggleDarkMode = () => {
+  const isDarkMode = document.documentElement.classList.toggle("dark");
+
+  // Simpan status dark mode ke localStorage
+  localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+
+  // Update ikon setelah dark mode di-toggle
+  updateIcons(isDarkMode);
+};
+
 // Mengakses Side bar
 fetch("sidebar.html")
   .then((response) => response.text())
   .then((data) => {
     document.getElementById("sidebar").innerHTML = data;
+
+    // Perbarui ikon di sidebar sesuai dengan mode saat ini
+    const storedTheme = localStorage.getItem("theme");
+    const isDarkMode = storedTheme === "dark";
+    updateIcons(isDarkMode);
+
+    // Event listener untuk tombol toggle di sidebar
+    const modeToggleButton = document.getElementById("modeToggle");
+    if (modeToggleButton) {
+      modeToggleButton.addEventListener("click", toggleDarkMode);
+    }
 
     // Dropdown
     document.getElementById("orders-button").addEventListener("click", function (e) {
@@ -19,40 +72,11 @@ fetch("sidebar.html")
       }
     });
 
-    // Dark Mode
-    const toggleDarkMode = () => {
-      document.documentElement.classList.toggle("dark");
-
-      // Toggle the visibility of the icons
-      const iconLight = document.getElementById("icon-light");
-      const iconDark = document.getElementById("icon-dark");
-
-      if (document.documentElement.classList.contains("dark")) {
-        iconLight.classList.remove("hidden");
-        iconDark.classList.add("hidden");
-      } else {
-        iconLight.classList.add("hidden");
-        iconDark.classList.remove("hidden");
-      }
-    };
-
-    // Initial setup based on the current mode
-    const initDarkMode = () => {
-      const iconLight = document.getElementById("icon-light");
-      const iconDark = document.getElementById("icon-dark");
-
-      if (document.documentElement.classList.contains("dark")) {
-        iconLight.classList.remove("hidden");
-        iconDark.classList.add("hidden");
-      } else {
-        iconLight.classList.add("hidden");
-        iconDark.classList.remove("hidden");
-      }
-    };
-
-    document.getElementById("modeToggle").addEventListener("click", toggleDarkMode);
-    document.addEventListener("DOMContentLoaded", initDarkMode);
+    // Dark Mode Toggle
   });
+
+// Setup awal ketika halaman dimuat
+document.addEventListener("DOMContentLoaded", initDarkMode);
 
 // Copy Code
 function copyCode() {
