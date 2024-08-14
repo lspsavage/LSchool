@@ -36,9 +36,3 @@ body {
 .sidebar {
   height: 100%;
 }
-
-#sidebar {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}

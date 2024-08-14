@@ -71,45 +71,6 @@ fetch("sidebar.html")
         menu.classList.add("hidden");
       }
     });
-
-    //Burger Menu - Side Bar
-    document.getElementById("burgerMenu").addEventListener("click", function () {
-      document.getElementById("sidebar").classList.toggle("-translate-x-full");
-      document.getElementById("sidebar-overlay").classList.toggle("hidden");
-    });
-
-    document.getElementById("sidebar-overlay").addEventListener("click", function () {
-      document.getElementById("sidebar").classList.add("-translate-x-full");
-      document.getElementById("sidebar-overlay").classList.add("hidden");
-    });
-
-    // Optional: Close sidebar on swipe left
-    document.getElementById("sidebar").addEventListener("touchstart", handleTouchStart, false);
-    document.getElementById("sidebar").addEventListener("touchmove", handleTouchMove, false);
-
-    let xStart = null;
-
-    function handleTouchStart(evt) {
-      const firstTouch = evt.touches[0];
-      xStart = firstTouch.clientX;
-    }
-
-    function handleTouchMove(evt) {
-      if (!xStart) {
-        return;
-      }
-
-      let xMove = evt.touches[0].clientX;
-      let xDiff = xStart - xMove;
-
-      // If swiped left
-      if (xDiff > 0) {
-        document.getElementById("sidebar").classList.add("-translate-x-full");
-        document.getElementById("sidebar-overlay").classList.add("hidden");
-      }
-
-      xStart = null;
-    }
   });
 
 // Setup awal ketika halaman dimuat
