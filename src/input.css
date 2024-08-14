@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for dropdown visibility on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.copy-button {
+  display: none;
+}
+
+.code-container:hover .copy-button {
+  display: block;
+}
+/* Tambahkan ini jika Anda tidak menggunakan Tailwind CSS */
+.notification {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #1e40af; /* Tailwind's blue-800 */
+  color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  overflow: hidden;
+}
+
+.content {
+  height: calc(100vh - 4rem); /* 4rem untuk header */
+}
+
+.sidebar {
+  height: 100%;
+}
+
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
