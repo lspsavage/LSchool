@@ -36,3 +36,15 @@ body {
 .sidebar {
   height: 100%;
 }
+
+/* Style untuk tampilan sidebar di mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+}
