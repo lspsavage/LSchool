@@ -105,8 +105,8 @@ fetch("sidebar.html")
 document.addEventListener("DOMContentLoaded", initDarkMode);
 
 // Copy Code
-function copyCode() {
-  const codeBlock = document.getElementById("code-block");
+function copyCode(codeId) {
+  const codeBlock = document.getElementById(codeId);
   const textArea = document.createElement("textarea");
   textArea.value = codeBlock.textContent;
   document.body.appendChild(textArea);
@@ -133,6 +133,21 @@ function showNotification(message) {
     notification.remove();
   }, 2000);
 }
+
+// function copyCode(codeId) {
+//   const codeBlock = document.getElementById(codeId);
+//   const range = document.createRange();
+//   range.selectNode(codeBlock);
+//   window.getSelection().removeAllRanges();
+//   window.getSelection().addRange(range);
+//   try {
+//     document.execCommand("copy");
+//     alert("Code copied to clipboard!");
+//   } catch (err) {
+//     alert("Failed to copy code.");
+//   }
+//   window.getSelection().removeAllRanges();
+// }
 
 // Dark Mode
 // const toggleDarkMode = () => {
