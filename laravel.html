@@ -30,7 +30,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 6h15m-15 6h15m-15 6h15" />
           </svg>
         </button>
-        <h1 class="text-2xl font-semibold text-gray-800 dark:text-gray-100 px-4">Installasi Tailwind dengan PostCSS
+        <h1 class="text-2xl font-semibold text-gray-800 dark:text-gray-100 px-4">Installasi Tailwind dengan Laravel
         </h1>
       </div>
       <div class="flex items-center space-x-4 pr-12">
@@ -58,9 +58,11 @@
           <p class="mb-6 px-6 dark:text-gray-100">Laravel adalah framework PHP open-source yang dirancang untuk
             mempermudah pengembangan aplikasi web dengan menyediakan berbagai fitur seperti routing, middleware, dan ORM
             (Object-Relational Mapping) dengan Eloquent. Laravel mengikuti pola arsitektur MVC (Model-View-Controller)
-            dan menawarkan berbagai alat serta pustaka untuk membantu pengembangan aplikasi yang bersih dan <br>
+            dan menawarkan berbagai alat serta pustaka untuk membantu pengembangan aplikasi yang bersih dan
             Tailwind CSS adalah framework CSS utility-first yang memungkinkan Anda untuk membangun desain yang dapat
-            dikustomisasi dengan cepat dan mudah menggunakan kelas-kelas utility.</p>
+            dikustomisasi dengan cepat dan mudah menggunakan kelas-kelas utility. Untuk lebih lanjut mengenai <a
+              class="text-blue-500" href="https://tailwindcss.com/docs/guides/laravel">Install Tailwind CSS -
+              Laravel</a>.</p>
           <div class="pl-6 mb-6 dark:text-gray-100">
             <ul>Persyaratan:</ul>
             <li>PHP (versi 8.0 atau lebih tinggi)</li>
@@ -68,7 +70,7 @@
             <li>Server database seperti MySQL, PostgreSQL, SQLite, atau SQL Server.</li>
           </div>
           <!-- 1 -->
-          <h1 class="text-xl font-semibold dark:text-gray-100 px-6">1. Instal Laravel</h1>
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6">1. Install Laravel</h1>
           <p class="mb-6 px-6 dark:text-gray-100">Pastikan Anda telah menginstal Composer. Kemudian, jalankan perintah
             berikut untuk membuat proyek Laravel baru
           </p>
@@ -90,9 +92,9 @@ composer create-project --prefer-dist laravel/laravel nama-proyek</code>
             </button>
           </div>
           <!-- 2 -->
-          <h1 class="pt-6 text-xl font-semibold dark:text-gray-100 px-6">2. Menggunakan Kelas Tailwind</h1>
-          <p class="mb-6 px-6 dark:text-gray-100">Setelah menambahkan CDN, Anda bisa langsung menggunakan kelas-kelas
-            utility Tailwind dalam elemen HTML Anda, seperti contoh di atas.
+          <h1 class="pt-6 text-xl font-semibold dark:text-gray-100 px-6">2. Ubah direktori project</h1>
+          <p class="mb-6 px-6 dark:text-gray-100">Setelah install laravel, Anda bisa langsung mengubah direktori anda ke
+            project laravel yang telah dibuat.
           </p>
           <div
             class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
@@ -112,13 +114,19 @@ cd nama-proyek</code>
             </button>
           </div>
           <!-- 3 -->
-          <h1 class="pt-6 pb-6 text-xl font-semibold dark:text-gray-100 px-6">3. Jalankan Server Pengembangan</h1>
+          <h1 class="pt-6 text-xl font-semibold dark:text-gray-100 px-6">3. Instal Tailwind CSS</h1>
+          <p class="mb-6 px-6 dark:text-gray-100">Instal Tailwind CSS dan dependensinya menggunakan npm (Node Package
+            Manager). Setelah itu, jalankan perintah untuk membuat file konfigurasi tailwind.config.js dan
+            postcss.config.js.
+          </p>
           <div
             class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
             <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
                 <!-- Untuk code jarak space kanan sesuai di editor -->
                 <code id="code-block-3" class="break-all">
-php artisan serve</code>
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+</code>
             </pre>
             <button
               class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
@@ -131,16 +139,29 @@ php artisan serve</code>
             </button>
           </div>
           <!-- 4 -->
-          <h1 class="pt-6 text-xl font-semibold dark:text-gray-100 px-6">4. Instal Tailwind CSS menggunakan npm
+          <h1 class="pt-6 text-xl font-semibold dark:text-gray-100 px-6">4. Konfigurasi Path Template
           </h1>
-          <p class="mb-6 px-6 dark:text-gray-100">Di dalam direktori proyek Laravel Anda, jalankan perintah berikut
-            untuk menginstal Tailwind CSS</p>
+          <p class="mb-6 px-6 dark:text-gray-100">Tambahkan path ke file template Anda dalam file konfigurasi Tailwind
+            tailwind.config.js. Ini memastikan Tailwind dapat memproses semua file yang Anda buat. Edit file
+            tailwind.config.js menjadi seperti berikut.</p>
           <div
             class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
             <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
                 <!-- Untuk code jarak space kanan sesuai di editor -->
                 <code id="code-block-4" class="break-all">
-npm install -D tailwindcss postcss autoprefixer</code>
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./resources/**/*.blade.php",
+    "./resources/**/*.js",
+    "./resources/**/*.vue",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+</code>
             </pre>
             <button
               class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
@@ -153,15 +174,19 @@ npm install -D tailwindcss postcss autoprefixer</code>
             </button>
           </div>
           <!-- 5 -->
-          <h1 class="pt-6 text-xl font-semibold dark:text-gray-100 px-6">5. Inisialisasi Tailwind CSS</h1>
-          <p class="mb-6 px-6 dark:text-gray-100">Jalankan perintah berikut untuk membuat file konfigurasi Tailwind dan
-            PostCSS</p>
+          <h1 class="pt-6 text-xl font-semibold dark:text-gray-100 px-6">5. Tambahkan Direktif Tailwind ke CSS</h1>
+          <p class="mb-6 px-6 dark:text-gray-100">Tambahkan direktif Tailwind ke file CSS Anda (app.css). Ini akan
+            memastikan bahwa Tailwind CSS dimuat dengan benar. Edit file resources/css/app.css dan tambahkan baris
+            berikut.</p>
           <div
             class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
             <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
                 <!-- Untuk code jarak space kanan sesuai di editor -->
                 <code id="code-block-5" class="break-all">
-npx tailwindcss init</code>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+</code>
             </pre>
             <button
               class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
@@ -174,20 +199,15 @@ npx tailwindcss init</code>
             </button>
           </div>
           <!-- 6 -->
-          <h1 class="pt-6 text-xl font-semibold dark:text-gray-100 px-6">6. Konfigurasi Tailwind CSS</h1>
-          <p class="mb-6 px-6 dark:text-gray-100">Tambahkan Tailwind ke file konfigurasi PostCSS. Buat atau edit file
-            postcss.config.js di root proyek Anda sehingga terlihat seperti ini</p>
+          <h1 class="pt-6 text-xl font-semibold dark:text-gray-100 px-6">6. Mulai Proses Build</h1>
+          <p class="mb-6 px-6 dark:text-gray-100">Jalankan perintah berikut untuk memulai proses build. Ini akan
+            mengkompilasi file CSS Anda dan mempersiapkannya untuk digunakan di proyek Anda.</p>
           <div
             class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
             <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
                 <!-- Untuk code jarak space kanan sesuai di editor -->
                 <code id="code-block-6" class="break-all">
-module.exports = {
- plugins: [
-  require('tailwindcss'),
-  require('autoprefixer'),
- ],
-}</code>
+npm run dev</code>
             </pre>
             <button
               class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
@@ -200,17 +220,30 @@ module.exports = {
             </button>
           </div>
           <!-- 7 -->
-          <h1 class="pt-6 text-xl font-semibold dark:text-gray-100 px-6">7. Siapkan File CSS</h1>
-          <p class="mb-6 px-6 dark:text-gray-100">Buat file CSS baru di 'resources/css/app.css' dan tambahkan direktif
-            Tailwind untuk mengimpor dasar-dasar Tailwind</p>
+          <h1 class="pt-6 text-xl font-semibold dark:text-gray-100 px-6">7. Gunakan Tailwind di Proyek Anda</h1>
+          <p class="mb-6 px-6 dark:text-gray-100">Pastikan file CSS yang telah dikompilasi dimuat di &lt;head&gt;
+            halaman HTML Anda. Kemudian, Anda bisa mulai menggunakan kelas utilitas Tailwind untuk styling
+            konten Anda.Edit file Blade template Anda (misalnya resources/views/app.blade.php) seperti berikut.
+          </p>
           <div
             class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
             <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
                 <!-- Untuk code jarak space kanan sesuai di editor -->
                 <code id="code-block-7" class="break-all">
-@tailwind base;
-@tailwind components;
-@tailwind utilities;</code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;My Tailwind Project&lt;/title&gt;
+  @vite('resources/css/app.css')
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="text-center text-blue-500"&gt;
+    &lt;h1&gt;Hello, Tailwind CSS!&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
             </pre>
             <button
               class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
@@ -223,22 +256,21 @@ module.exports = {
             </button>
           </div>
           <!-- 8 -->
-          <h1 class="pt-6 text-xl font-semibold dark:text-gray-100 px-6">8. Kompilasi CSS dengan Laravel Mix</h1>
-          <p class="mb-6 px-6 dark:text-gray-100">Laravel Mix adalah API yang menyederhanakan proses konfigurasi Webpack
-            untuk kompilasi aset. File webpack.mix.js di root proyek Laravel adalah tempat Anda mengatur konfigurasi
-            ini. Edit file webpack.mix.js di root proyek Laravel untuk mengatur
-            kompilasi CSS</p>
+          <h1 class="pt-6 text-xl font-semibold dark:text-gray-100 px-6">8. Edit File Routes</h1>
+          <p class="mb-6 px-6 dark:text-gray-100">Di Laravel, routing mengatur bagaimana permintaan HTTP diarahkan ke
+            kontroler atau view tertentu. Semua route Laravel didefinisikan dalam file di direktori routes. File utama
+            untuk route web adalah routes/web.php. Anda dapat menambahkan atau mengganti route di sini.</p>
           <div
             class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
             <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
                 <!-- Untuk code jarak space kanan sesuai di editor -->
                 <code id="code-block-8" class="break-all">
-const mix = require('laravel-mix');
+// routes/web.php
 
-mix.js('resources/js/app.js', 'public/js')
-  .postCss('resources/css/app.css', 'public/css', [
-    require('tailwindcss'),
-]);</code>
+// Route baru yang menggantikan route default
+Route::get('/', function () {
+    return view('app');
+});</code>
             </pre>
             <button
               class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
@@ -251,39 +283,18 @@ mix.js('resources/js/app.js', 'public/js')
             </button>
           </div>
           <!-- 9 -->
-          <h1 class="pt-6 text-xl font-semibold dark:text-gray-100 px-6">9. Kompilasi Aset</h1>
-          <ul class="mb-6 px-6 dark:text-gray-100">Setelah Anda mengatur konfigurasi webpack.mix.js, jalankan perintah
-            npm untuk mengompilasi aset</ul>
-          <li class="pl-6 dark:text-gray-100">Untuk Pengembangan</li>
-          <p class="px-6 pb-4 dark:text-gray-100">Ini akan mengompilasi file CSS dan JavaScript untuk pengembangan dan
-            mengaktifkan fitur seperti hot
-            reloading (memuat ulang otomatis saat Anda membuat perubahan).</p>
+          <h1 class="pt-6 text-xl font-semibold dark:text-gray-100 px-6">9. Jalankan Server Laravel</h1>
+          <p class="mb-6 px-6 dark:text-gray-100">php artisan serve adalah perintah untuk menjalankan server
+            pengembangan Laravel. Ini memungkinkan Anda untuk mengakses aplikasi Laravel Anda melalui browser tanpa
+            memerlukan server web seperti Apache atau Nginx. Di terminal, jalankan perintah berikut untuk memulai
+            server.
+          </p>
           <div
             class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
             <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
                 <!-- Untuk code jarak space kanan sesuai di editor -->
                 <code id="code-block-8" class="break-all">
-npm run dev</code>
-            </pre>
-            <button
-              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
-              onclick="copyCode('code-block-8')">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
-                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
-              </svg>
-            </button>
-          </div>
-          <li class="pl-6 pt-6 dark:text-gray-100">Untuk Produksi</li>
-          <p class="px-6 pb-4 dark:text-gray-100">Ini akan mengompilasi file CSS dan JavaScript untuk produksi, dengan
-            optimasi seperti minifikasi (mengurangi ukuran file).</p>
-          <div
-            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
-            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
-                <!-- Untuk code jarak space kanan sesuai di editor -->
-                <code id="code-block-8" class="break-all">
-npm run dev</code>
+php artisan serve</code>
             </pre>
             <button
               class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
@@ -296,27 +307,10 @@ npm run dev</code>
             </button>
           </div>
           <!-- 10 -->
-          <h1 class="pt-6 text-xl font-semibold dark:text-gray-100 px-6">10. Gunakan Tailwind dalam Blade Template</h1>
-          <p class="mb-6 px-6 dark:text-gray-100">Setelah mengompilasi aset, Anda perlu memastikan bahwa file CSS yang
-            telah dikompilasi dimuat dalam aplikasi Anda. Tambahkan referensi CSS ke dalam file Blade Anda (template
-            HTML). Misalnya, di 'resources/views/welcome.blade.php', tambahkan</p>
-          <div
-            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
-            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
-                <!-- Untuk code jarak space kanan sesuai di editor -->
-                <code id="code-block-8" class="break-all">
-&lt;link href="{{ asset('css/app.css') }}" rel="stylesheet"&gt;</code>
-            </pre>
-            <button
-              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
-              onclick="copyCode('code-block-8')">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
-                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
-              </svg>
-            </button>
-          </div>
+          <h1 class="pt-6 text-xl font-semibold dark:text-gray-100 px-6">10. Akses Aplikasi</h1>
+          <p class="mb-6 px-6 dark:text-gray-100">Buka browser dan kunjungi http://localhost:8000 untuk melihat aplikasi
+            Laravel Anda. Jika Anda telah mengganti route, pastikan untuk memeriksa apakah perubahan tersebut terlihat
+            di browser.</p>
 
           <!-- Akhir -->
         </div>
