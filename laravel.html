@@ -61,7 +61,7 @@
             dan menawarkan berbagai alat serta pustaka untuk membantu pengembangan aplikasi yang bersih dan <br>
             Tailwind CSS adalah framework CSS utility-first yang memungkinkan Anda untuk membangun desain yang dapat
             dikustomisasi dengan cepat dan mudah menggunakan kelas-kelas utility.</p>
-          <div class="pl-6 mb-6">
+          <div class="pl-6 mb-6 dark:text-gray-100">
             <ul>Persyaratan:</ul>
             <li>PHP (versi 8.0 atau lebih tinggi)</li>
             <li>Composer (pengelola dependensi PHP)</li>
@@ -239,6 +239,73 @@ mix.js('resources/js/app.js', 'public/js')
   .postCss('resources/css/app.css', 'public/css', [
     require('tailwindcss'),
 ]);</code>
+            </pre>
+            <button
+              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
+              onclick="copyCode('code-block-8')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </button>
+          </div>
+          <!-- 9 -->
+          <h1 class="pt-6 text-xl font-semibold dark:text-gray-100 px-6">9. Kompilasi Aset</h1>
+          <ul class="mb-6 px-6 dark:text-gray-100">Setelah Anda mengatur konfigurasi webpack.mix.js, jalankan perintah
+            npm untuk mengompilasi aset</ul>
+          <li class="pl-6 dark:text-gray-100">Untuk Pengembangan</li>
+          <p class="px-6 pb-4 dark:text-gray-100">Ini akan mengompilasi file CSS dan JavaScript untuk pengembangan dan
+            mengaktifkan fitur seperti hot
+            reloading (memuat ulang otomatis saat Anda membuat perubahan).</p>
+          <div
+            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
+                <!-- Untuk code jarak space kanan sesuai di editor -->
+                <code id="code-block-8" class="break-all">
+npm run dev</code>
+            </pre>
+            <button
+              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
+              onclick="copyCode('code-block-8')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </button>
+          </div>
+          <li class="pl-6 pt-6 dark:text-gray-100">Untuk Produksi</li>
+          <p class="px-6 pb-4 dark:text-gray-100">Ini akan mengompilasi file CSS dan JavaScript untuk produksi, dengan
+            optimasi seperti minifikasi (mengurangi ukuran file).</p>
+          <div
+            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
+                <!-- Untuk code jarak space kanan sesuai di editor -->
+                <code id="code-block-8" class="break-all">
+npm run dev</code>
+            </pre>
+            <button
+              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
+              onclick="copyCode('code-block-8')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </button>
+          </div>
+          <!-- 10 -->
+          <h1 class="pt-6 text-xl font-semibold dark:text-gray-100 px-6">10. Gunakan Tailwind dalam Blade Template</h1>
+          <p class="mb-6 px-6 dark:text-gray-100">Setelah mengompilasi aset, Anda perlu memastikan bahwa file CSS yang
+            telah dikompilasi dimuat dalam aplikasi Anda. Tambahkan referensi CSS ke dalam file Blade Anda (template
+            HTML). Misalnya, di 'resources/views/welcome.blade.php', tambahkan</p>
+          <div
+            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
+                <!-- Untuk code jarak space kanan sesuai di editor -->
+                <code id="code-block-8" class="break-all">
+&lt;link href="{{ asset('css/app.css') }}" rel="stylesheet"&gt;</code>
             </pre>
             <button
               class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
