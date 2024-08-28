@@ -134,22 +134,19 @@ function showNotification(message) {
   }, 2000);
 }
 
-// function copyCode(codeId) {
-//   const codeBlock = document.getElementById(codeId);
-//   const range = document.createRange();
-//   range.selectNode(codeBlock);
-//   window.getSelection().removeAllRanges();
-//   window.getSelection().addRange(range);
-//   try {
-//     document.execCommand("copy");
-//     alert("Code copied to clipboard!");
-//   } catch (err) {
-//     alert("Failed to copy code.");
-//   }
-//   window.getSelection().removeAllRanges();
-// }
-
-// Dark Mode
-// const toggleDarkMode = () => {
-//   document.documentElement.classList.toggle("dark");
-// };
+$(".owl-carousel").owlCarousel({
+  loop: true,
+  margin: 10,
+  nav: true,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    600: {
+      items: 3,
+    },
+    1000: {
+      items: 5,
+    },
+  },
+});
