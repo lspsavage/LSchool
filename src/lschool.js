@@ -134,6 +134,15 @@ function showNotification(message) {
   }, 2000);
 }
 
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+});
+
 $(".owl-carousel").owlCarousel({
   loop: true,
   margin: 10,

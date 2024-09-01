@@ -32,7 +32,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 6h15m-15 6h15m-15 6h15" />
           </svg>
         </button>
-        <h1 class="text-2xl font-semibold text-gray-800 dark:text-gray-100 px-4">Laravel Logic
+        <h1 class="text-2xl font-semibold text-gray-800 dark:text-gray-100 px-4">Laravel CRUD
         </h1>
       </div>
       <div class="flex items-center space-x-4 pr-12">
@@ -57,7 +57,6 @@
       <div class=" mx-auto bg-white shadow-lg rounded-lg overflow-hidden dark:bg-gray-800">
         <!-- Contain 2 -->
         <div class="p-6 w-full">
-          <h1 class="text-3xl font-semibold dark:text-gray-100 px-6 mb-4">CRUD</h1>
           <ul class="mb-6 px-6 dark:text-gray-100">CRUD adalah singkatan dari Create, Read, Update, dan Delete. Ini
             adalah operasi dasar yang digunakan untuk mengelola data di aplikasi web, dan Laravel menyediakan cara yang
             sangat efisien untuk menangani CRUD melalui Eloquent ORM (Object-Relational Mapping). Berikut adalah
@@ -69,8 +68,15 @@
             Ini bisa berupa semua data atau data spesifik berdasarkan kondisi tertentu. Metode seperti <b>all(), find(),
               findOrFail(),
               atau where()</b> digunakan untuk membaca data.
+            <a href="#read">
+              <ul class="px-6 pt-2 text-blue-500"> - Read</ul>
+            </a>
+            <a href="#read-id">
+              <ul class="px-6 pt-2 text-blue-500"> - Read with id</ul>
+            </a>
 
           </li>
+
           <li class="px-6 dark:text-gray-100 mb-2"><b>Update (Memperbarui Data):</b> Memperbarui data yang sudah ada di
             database.
             Ini dilakukan dengan metode seperti <b>update()</b> atau dengan mengubah properti model dan kemudian
@@ -91,7 +97,7 @@
           <!-- 1.2 -->
           <h1 class="text-xl font-semibold dark:text-gray-100 px-6">2. Tambahkan file Book.php pada models</h1>
           <p class="mb-4 px-6 dark:text-gray-100">Buat file dengan nama Book.php pada <span
-              class="bg-slate-200">app/Models/Book.php</span> pada laravel
+              class="bg-slate-200 dark:bg-slate-500">app/Models/Book.php</span> pada laravel
             anda.
           </p>
           <div
@@ -162,7 +168,8 @@ class Book extends Model
           </h1>
           <p class="mb-4 px-6 dark:text-gray-100">Disini kita membuat Controller yang berfungsi sebagai penghubung
             antara view dan Models dimana kita membuat class BookController. Tambahkan file BookController.php pada
-            <span class="bg-slate-200">app/Http/Controllers/BookController.php</span> dan isikan dengan ini.
+            <span class="bg-slate-200 dark:bg-slate-500">app/Http/Controllers/BookController.php</span> dan isikan
+            dengan ini.
           </p>
           <div
             class="mb-4 relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
@@ -196,7 +203,7 @@ class BookController extends Controller
 
           <!-- Read -->
           <!-- 1 -->
-          <h1 class="text-2xl font-semibold dark:text-gray-100 px-6 mb-4 pt-6">Read (Membaca Data)</h1>
+          <h1 id="read" class="text-2xl font-semibold dark:text-gray-100 px-6 mb-4 pt-6">Read</h1>
           <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">1. Tambahkan pada BookController.php</h1>
           <p class="mb-4 px-6 dark:text-gray-100">Disini kita menambahkan kode pada BookController.php, didalam class
             BookController kita tambahkan kode berikut.
@@ -232,7 +239,7 @@ class BookController extends Controller
           <!-- 2 -->
           <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">2. Buat Route pada web.php</h1>
           <p class="mb-4 px-6 dark:text-gray-100">kita tambahkan route pada <span
-              class="bg-gray-200">routes/web.php</span> dengan isi.
+              class="bg-gray-200 dark:bg-slate-500">routes/web.php</span> dengan isi.
           </p>
           <div
             class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
@@ -262,7 +269,7 @@ Route::get('books', [BookController::class,'bookspage'])->name('books');</code>
           <!-- 3 -->
           <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">3. Buat View dengan nama bookspage.blade.php</h1>
           <p class="mb-4 px-6 dark:text-gray-100">kita buat file bookspage.blade.php untuk tampilannya pada<span
-              class="bg-gray-200">resources/views/</span> dan masukan kode berikut dalam html anda.
+              class="bg-gray-200 dark:bg-slate-500">resources/views/</span> dan masukan kode berikut dalam html anda.
           </p>
           <div
             class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
@@ -319,9 +326,9 @@ Route::get('books', [BookController::class,'bookspage'])->name('books');</code>
             yang dibutuhkan. Dengan ini buku dapat ditampilkan.
           </p>
 
-          <!-- Create-->
+          <!-- Read with id-->
           <!-- 1 -->
-          <h1 class="text-2xl font-semibold dark:text-gray-100 px-6 mb-4 pt-6">Create (Membuat Data)</h1>
+          <h1 id="read-id" class="text-2xl font-semibold dark:text-gray-100 px-6 mb-4 pt-6">Read with id</h1>
           <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">1. Tambahkan pada BookController.php</h1>
           <p class="mb-4 px-6 dark:text-gray-100">Disini kita menambahkan kode pada BookController.php, didalam class
             BookController kita tambahkan kode berikut.
@@ -332,11 +339,11 @@ Route::get('books', [BookController::class,'bookspage'])->name('books');</code>
             <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
                 <!-- Untuk code jarak space kanan sesuai di editor -->
                 <code id="code-block-1" class="break-all">
-  //Menampilkan daftar buku
-  public function bookspage()
+  // Menampilkan detail buku
+  public function show($id)
   {
-    $books = Book::all();
-    return view('bookspage', compact('books'));
+      $books = Book::where('Book_ID', $id)->firstOrFail(); // Mengambil buku berdasarkan id
+      return view('booksdetailpage', compact('books')); // Menampilkan halaman detail buku
   }</code>
             </pre>
             <!-- </div> -->
@@ -350,9 +357,127 @@ Route::get('books', [BookController::class,'bookspage'])->name('books');</code>
               </svg>
             </button>
           </div>
-          <p class="pt-4 mb-4 px-6 dark:text-gray-100">Disini kita akan menampilkan daftar buku dengan mengambil semua
-            data buku dan mengirim data ke view 'bookspage'. pada <b>bookspage()</b> Fungsi ini mengambil semua data
-            buku menggunakan <b>Book::all()</b> dan mengirimkannya ke view bookspage.
+          <p class="pt-4 mb-4 px-6 dark:text-gray-100">Disini kita akan menampilkan buku yang akan dicari sesuai id nya.
+            Dimana kita mengambil buku berdasarkan id dimana id yang digunakan adalah string. Disini menggunakan
+            <b>where</b> dan <b>firstOrFail</b> untuk mencari buku berdasarkan <b>Book_ID</b>.
+          </p>
+          <!-- 2 -->
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">2. Tambahkan Route pada web.php</h1>
+          <p class="mb-4 px-6 dark:text-gray-100">Disini kita menambahkan kode pada BookController.php, didalam class
+            BookController kita tambahkan kode berikut.
+          </p>
+          <div
+            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
+            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
+                <!-- Untuk code jarak space kanan sesuai di editor -->
+                <code id="code-block-1" class="break-all">
+  // Route untuk halaman detail buku
+Route::get('books/{id}/detail', [BookController::class, 'show'])->name('books.detail');</code>
+            </pre>
+            <!-- </div> -->
+            <button
+              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
+              onclick="copyCode('code-block-1')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </button>
+          </div>
+          <p class="pt-4 mb-4 px-6 dark:text-gray-100">Disini kita mengambil dari BookController.php untuk digunkaan
+            diroute dan mendifinisikan rute GET /books/id/detail dimana id akan diambil dari tombol yang tertera pada
+            url.
+          </p>
+          <!-- 3 -->
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">3. Tambahkan tombol pada bookspage.blade.php</h1>
+          <p class="mb-4 px-6 dark:text-gray-100">Disini kita menambahkan tombol untuk setiap baris untuk melihat detail
+            dari buku dengan id sebagai niali uniqnya.</p>
+          <div
+            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
+            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
+                <!-- Untuk code jarak space kanan sesuai di editor -->
+                <code id="code-block-1" class="break-all">
+&lt;a href="{{ route('books.detail', ['id' => $book->Book_ID]) }}" class="px-4 py-2 bg-yellow-200 rounded-2xl shadow-lg hover:bg-yellow-300"&gt;Detail&lt;/a&gt;</code>
+            </pre>
+            <!-- </div> -->
+            <button
+              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
+              onclick="copyCode('code-block-1')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </button>
+          </div>
+          <p class="pt-4 mb-4 px-6 dark:text-gray-100">Disini kita mengambil akan mengambil id dengan
+            <b>$book->Book_ID</b>. Jadi bentuk route di url nanti menjadi <span
+              class="bg-gray-200 dark:bg-slate-500">books/B0001/detail</span>.
+          </p>
+          <!-- 3 -->
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">3. Buat tampilan booksdetailpage.blade.php</h1>
+          <p class="mb-4 px-6 dark:text-gray-100">Disini kita akan membuat file booksdetailpage.blade.php pada <span
+              class="bg-gray-200 dark:bg-slate-500">resources/views/</span> dan masukan kode berikut dalam html anda.
+          </p>
+          <div
+            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
+            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
+                <!-- Untuk code jarak space kanan sesuai di editor -->
+                <code id="code-block-1" class="break-all">
+&lt;div class="pl-6 space-y-4 xl:pl-24"&gt;
+    &lt;h2 class="text-2xl font-bold text-gray-900 mb-4"&gt;{{ $books->Title }}&lt;/h2&gt;
+    &lt;p class="text-lg"&gt;&lt;span class="font-semibold"&gt;Pengarang:&lt;/span&gt; {{ $books->Author }}&lt;/p&gt;
+    &lt;p class="text-lg"&gt;&lt;span class="font-semibold"&gt;Penerbit:&lt;/span&gt; {{ $books->Publisher }}&lt;/p&gt;
+    &lt;p class="text-lg"&gt;&lt;span class="font-semibold"&gt;Tahun Terbit:&lt;/span&gt; {{ $books->Year_Published }}&lt;/p&gt;
+    &lt;p class="text-lg"&gt;&lt;span class="font-semibold"&gt;Genre:&lt;/span&gt; {{ $books->Genre }}&lt;/p&gt;
+    &lt;p class="text-lg"&gt;&lt;span class="font-semibold"&gt;ISBN:&lt;/span&gt; {{ $books->ISBN }}&lt;/p&gt;
+    &lt;p class="text-lg"&gt;&lt;span class="font-semibold"&gt;Tersedia:&lt;/span&gt; {{ $books->Copies_Available }} Buku&lt;/p&gt;
+&lt;/div&gt;</code>
+            </pre>
+            <!-- </div> -->
+            <button
+              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
+              onclick="copyCode('code-block-1')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </button>
+          </div>
+          <p class="pt-4 mb-4 px-6 dark:text-gray-100">Seperti diatas disini kita sesuikan isinya.
+          </p>
+          <!-- 4 -->
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">4. Tambahkan tombol untuk kembali ke daftar buku
+          </h1>
+          <p class="mb-4 px-6 dark:text-gray-100">Disini kita akan menambahkan tombol pada booksdetailpage.blade.php
+            untuk kembali ke tampilan bookspage.blade.php
+          </p>
+          <div
+            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
+            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
+                <!-- Untuk code jarak space kanan sesuai di editor -->
+                <code id="code-block-1" class="break-all">
+&lt;a href="{{route('books')}}" class="bg-lime-500 text-white px-4 py-2 rounded-lg shadow hover:bg-lime-600"&gt;Back&lt;/a&gt;</code>
+            </pre>
+            <!-- </div> -->
+            <button
+              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
+              onclick="copyCode('code-block-1')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </button>
+          </div>
+          <p class="pt-4 mb-4 px-6 dark:text-gray-100">Dengan route ke books kita bisa kembali ke tampilan awal atau
+            daftar buku.
           </p>
           <!-- Akhir -->
         </div>
