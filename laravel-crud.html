@@ -5,8 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/LSchool/dist/output.css">
-  <link rel="stylesheet" href="/LSchool/src/owl.carousel.min.css">
-  <link rel="stylesheet" href="/LSchool/src/owl.theme.default.min.css">
   <title>LSchool</title>
   <!-- <style>
   </style> -->
@@ -73,6 +71,9 @@
             </a>
             <a href="#read-id">
               <ul class="px-6 pt-2 text-blue-500"> - Read with id</ul>
+            </a>
+            <a href="#read-datetime">
+              <ul class="px-6 pt-2 text-blue-500"> - Read: Conversion date time</ul>
             </a>
 
           </li>
@@ -168,7 +169,7 @@ class Book extends Model
           </h1>
           <p class="mb-4 px-6 dark:text-gray-100">Disini kita membuat Controller yang berfungsi sebagai penghubung
             antara view dan Models dimana kita membuat class BookController. Tambahkan file BookController.php pada
-            <span class="bg-slate-200 dark:bg-slate-500">app/Http/Controllers/BookController.php</span> dan isikan
+            <span class="bg-slate-200 dark:bg-slate-500">/Controllers/BookController.php</span> dan isikan
             dengan ini.
           </p>
           <div
@@ -417,8 +418,8 @@ Route::get('books/{id}/detail', [BookController::class, 'show'])->name('books.de
             <b>$book->Book_ID</b>. Jadi bentuk route di url nanti menjadi <span
               class="bg-gray-200 dark:bg-slate-500">books/B0001/detail</span>.
           </p>
-          <!-- 3 -->
-          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">3. Buat tampilan booksdetailpage.blade.php</h1>
+          <!-- 4 -->
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">4. Buat tampilan booksdetailpage.blade</h1>
           <p class="mb-4 px-6 dark:text-gray-100">Disini kita akan membuat file booksdetailpage.blade.php pada <span
               class="bg-gray-200 dark:bg-slate-500">resources/views/</span> dan masukan kode berikut dalam html anda.
           </p>
@@ -426,18 +427,18 @@ Route::get('books/{id}/detail', [BookController::class, 'show'])->name('books.de
             class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
             <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
             <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
-                <!-- Untuk code jarak space kanan sesuai di editor -->
-                <code id="code-block-1" class="break-all">
+              <!-- Untuk code jarak space kanan sesuai di editor -->
+              <code id="code-block-1" class="break-all">
 &lt;div class="pl-6 space-y-4 xl:pl-24"&gt;
-    &lt;h2 class="text-2xl font-bold text-gray-900 mb-4"&gt;{{ $books->Title }}&lt;/h2&gt;
-    &lt;p class="text-lg"&gt;&lt;span class="font-semibold"&gt;Pengarang:&lt;/span&gt; {{ $books->Author }}&lt;/p&gt;
-    &lt;p class="text-lg"&gt;&lt;span class="font-semibold"&gt;Penerbit:&lt;/span&gt; {{ $books->Publisher }}&lt;/p&gt;
-    &lt;p class="text-lg"&gt;&lt;span class="font-semibold"&gt;Tahun Terbit:&lt;/span&gt; {{ $books->Year_Published }}&lt;/p&gt;
-    &lt;p class="text-lg"&gt;&lt;span class="font-semibold"&gt;Genre:&lt;/span&gt; {{ $books->Genre }}&lt;/p&gt;
-    &lt;p class="text-lg"&gt;&lt;span class="font-semibold"&gt;ISBN:&lt;/span&gt; {{ $books->ISBN }}&lt;/p&gt;
-    &lt;p class="text-lg"&gt;&lt;span class="font-semibold"&gt;Tersedia:&lt;/span&gt; {{ $books->Copies_Available }} Buku&lt;/p&gt;
+  &lt;h2 class="text-2xl font-bold text-gray-900 mb-4"&gt;{{ $books->Title }}&lt;/h2&gt;
+  &lt;p class="text-lg"&gt;&lt;span class="font-semibold"&gt;Pengarang:&lt;/span&gt; {{ $books->Author }}&lt;/p&gt;
+  &lt;p class="text-lg"&gt;&lt;span class="font-semibold"&gt;Penerbit:&lt;/span&gt; {{ $books->Publisher }}&lt;/p&gt;
+  &lt;p class="text-lg"&gt;&lt;span class="font-semibold"&gt;Tahun Terbit:&lt;/span&gt; {{ $books->Year_Published }}&lt;/p&gt;
+  &lt;p class="text-lg"&gt;&lt;span class="font-semibold"&gt;Genre:&lt;/span&gt; {{ $books->Genre }}&lt;/p&gt;
+  &lt;p class="text-lg"&gt;&lt;span class="font-semibold"&gt;ISBN:&lt;/span&gt; {{ $books->ISBN }}&lt;/p&gt;
+  &lt;p class="text-lg"&gt;&lt;span class="font-semibold"&gt;Tersedia:&lt;/span&gt; {{ $books->Copies_Available }} Buku&lt;/p&gt;
 &lt;/div&gt;</code>
-            </pre>
+          </pre>
             <!-- </div> -->
             <button
               class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
@@ -451,8 +452,8 @@ Route::get('books/{id}/detail', [BookController::class, 'show'])->name('books.de
           </div>
           <p class="pt-4 mb-4 px-6 dark:text-gray-100">Seperti diatas disini kita sesuikan isinya.
           </p>
-          <!-- 4 -->
-          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">4. Tambahkan tombol untuk kembali ke daftar buku
+          <!-- 5 -->
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">5. Tambahkan tombol untuk kembali ke daftar buku
           </h1>
           <p class="mb-4 px-6 dark:text-gray-100">Disini kita akan menambahkan tombol pada booksdetailpage.blade.php
             untuk kembali ke tampilan bookspage.blade.php
@@ -479,6 +480,113 @@ Route::get('books/{id}/detail', [BookController::class, 'show'])->name('books.de
           <p class="pt-4 mb-4 px-6 dark:text-gray-100">Dengan route ke books kita bisa kembali ke tampilan awal atau
             daftar buku.
           </p>
+
+          <!-- Read: conversi date time  -->
+          <!-- 1 -->
+          <h1 id="read-datetime" class="text-2xl font-semibold dark:text-gray-100 px-6 mb-4 pt-6">Read: Conversion date
+            time
+          </h1>
+          <p class="mb-4 px-6 dark:text-gray-100">Untuk mengonversi tanggal dari format 2024-08-01 menjadi 1 Agustus
+            2024 di Laravel, Anda bisa menggunakan <a href="https://laravel.com/api/7.x/Illuminate/Support/Carbon.html"
+              class="text-blue-500">Carbon</a>, yang merupakan library untuk manipulasi tanggal dan
+            waktu
+            yang sudah terintegrasi dengan Laravel.
+          </p>
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">1. Format Tanggal di Blade</h1>
+          <p class="mb-4 px-6 dark:text-gray-100">Sebagai contoh anda menggunakan kolom <b>Membership_Date</b> untuk
+            menyimpan tanggal. Jika <b>Membership_Date</b> sudah merupakan objek tanggal atau string tanggal yang valid,
+            Anda
+            dapat memformatnya langsung seperti ini:
+          </p>
+          <div
+            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
+            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
+                <!-- Untuk code jarak space kanan sesuai di editor -->
+                <code id="code-block-1" class="break-all">
+@php
+    use Carbon\Carbon;
+
+    $formattedDate = Carbon::parse($members->Membership_Date)->translatedFormat('j F Y');
+@endphp
+
+{{ $formattedDate }}</code>
+            </pre>
+            <!-- </div> -->
+            <button
+              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
+              onclick="copyCode('code-block-1')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </button>
+          </div>
+          <p class="pt-4 mb-4 px-6 dark:text-gray-100">Disini kita membuat variabel <b>formattedDate</b> yang berisi
+            konversi tangggal dari Membership_Date.
+          </p>
+          <!-- 2 -->
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">2. Set Locale untuk Bahasa Indonesia</h1>
+          <p class="mb-4 px-6 dark:text-gray-100">Untuk memastikan bulan ditampilkan dalam bahasa Indonesia, pastikan
+            Locale diatur ke id. Anda bisa menambahkan ini di awal, misalnya di file AppServiceProvider pada direktori
+            <span class="bg-gray-200 dark:bg-slate-500">app/Providers/</span>
+          </p>
+          <div
+            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
+            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
+                <!-- Untuk code jarak space kanan sesuai di editor -->
+                <code id="code-block-1" class="break-all">
+use Carbon\Carbon;
+
+public function boot()
+{
+    Carbon::setLocale('id');
+}</code>
+            </pre>
+            <!-- </div> -->
+            <button
+              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
+              onclick="copyCode('code-block-1')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </button>
+          </div>
+          <!-- 3 -->
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 pt-4">3. Jika Membership_Date Adalah Null</h1>
+          <p class="mb-4 px-6 dark:text-gray-100">Pastikan untuk menangani kasus di mana Membership_Date bisa saja null,
+            agar tidak ada error
+          </p>
+          <div
+            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
+            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
+                <!-- Untuk code jarak space kanan sesuai di editor -->
+                <code id="code-block-1" class="break-all">
+@php
+    $formattedDate = $members->Membership_Date 
+        ? Carbon::parse($members->Membership_Date)->translatedFormat('j F Y') 
+        : 'Tanggal tidak tersedia';
+@endphp
+
+{{ $formattedDate }}</code>
+            </pre>
+            <!-- </div> -->
+            <button
+              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
+              onclick="copyCode('code-block-1')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </button>
+          </div>
+
           <!-- Akhir -->
         </div>
       </div>
