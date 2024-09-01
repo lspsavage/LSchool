@@ -32,7 +32,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 6h15m-15 6h15m-15 6h15" />
           </svg>
         </button>
-        <h1 class="text-2xl font-semibold text-gray-800 dark:text-gray-100 px-4">Owl Carousel 2
+        <h1 class="text-2xl font-semibold text-gray-800 dark:text-gray-100 px-4">Laravel Logic
         </h1>
       </div>
       <div class="flex items-center space-x-4 pr-12">
@@ -57,53 +57,42 @@
       <div class=" mx-auto bg-white shadow-lg rounded-lg overflow-hidden dark:bg-gray-800">
         <!-- Contain 2 -->
         <div class="p-6 w-full">
-          <p class="mb-6 px-6 dark:text-gray-100">Owl Carousel 2 adalah sebuah plugin jQuery yang digunakan untuk
-            membuat carousels atau slider responsif dengan mudah di website. Responsif: Owl Carousel 2 dapat
-            menyesuaikan ukuran dan tata letaknya dengan baik pada berbagai ukuran layar, sehingga cocok untuk digunakan
-            pada perangkat desktop maupun mobile. Plugin ini menawarkan berbagai opsi kustomisasi, seperti jumlah item
-            yang ditampilkan, kecepatan transisi, dan efek animasi, yang dapat diatur sesuai kebutuhan proyek Anda. Owl
-            Carousel 2 menyediakan berbagai jenis kontrol, termasuk tombol navigasi (prev/next), paginasi, dan indikator
-            yang dapat dikonfigurasi untuk membantu pengguna menavigasi antara item carousel. Owl Carousel 2 memerlukan
-            jQuery untuk berfungsi, jadi Anda harus memastikan bahwa jQuery sudah terinstal di proyek Anda. Untuk lebih
-            lanjut mengenai <a href="https://owlcarousel2.github.io/OwlCarousel2/" class="text-blue-500">Owl Carousel
-              2</a>.
-          </p>
-          <h1 class="text-2xl font-semibold dark:text-gray-100 px-6 mb-4">Installasi Owl Carousel 2</h1>
-          <!-- 1 -->
-          <h1 class="text-xl font-semibold dark:text-gray-100 px-6">1. Sertakan File CSS dan JavaScript</h1>
-          <p class="mb-4 px-6 dark:text-gray-100">Anda perlu menambahkan file CSS dan JavaScript Owl Carousel 2 ke dalam
-            proyek Anda. Anda bisa mengunduhnya dari <a
-              href="https://owlcarousel2.github.io/OwlCarousel2/docs/started-installation.html"
-              class="text-blue-500">situs resmi Owl
-              Carousel</a> atau menggunakan CDN.
-          </p>
-          <div
-            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
-            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
-            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
-                <!-- Untuk code jarak space kanan sesuai di editor -->
-                <code id="code-block-1" class="break-all">
-<!-- Link CSS Owl Carousel -->
-&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"&gt;
-&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"&gt;
+          <h1 class="text-3xl font-semibold dark:text-gray-100 px-6 mb-4">CRUD</h1>
+          <ul class="mb-6 px-6 dark:text-gray-100">CRUD adalah singkatan dari Create, Read, Update, dan Delete. Ini
+            adalah operasi dasar yang digunakan untuk mengelola data di aplikasi web, dan Laravel menyediakan cara yang
+            sangat efisien untuk menangani CRUD melalui Eloquent ORM (Object-Relational Mapping). Berikut adalah
+            gambaran umum tentang masing-masing operasi CRUD:
+          </ul>
+          <li class="px-6 dark:text-gray-100 mb-2"><b>Create (Membuat Data):</b> Menambahkan data baru ke database. Di
+            Laravel, ini dilakukan menggunakan metode seperti <b>create()</b> atau <b>save()</b> pada model.</li>
+          <li class="px-6 dark:text-gray-100 mb-2"><b>Read (Membaca Data):</b> Mengambil data dari database.
+            Ini bisa berupa semua data atau data spesifik berdasarkan kondisi tertentu. Metode seperti <b>all(), find(),
+              findOrFail(),
+              atau where()</b> digunakan untuk membaca data.
 
-&lt;script src="https://code.jquery.com/jquery-3.6.0.min.js">&lt;/script&gt;
-&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"&gt;&lt;/script&gt;</code>
-            </pre>
-            <!-- </div> -->
-            <button
-              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
-              onclick="copyCode('code-block-1')">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
-                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
-              </svg>
-            </button>
-          </div>
-          <!-- 2 -->
-          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 pt-4">2. Buat Struktur HTML</h1>
-          <p class="mb-4 px-6 dark:text-gray-100">Siapkan HTML untuk carousel Anda. Misalnya
+          </li>
+          <li class="px-6 dark:text-gray-100 mb-2"><b>Update (Memperbarui Data):</b> Memperbarui data yang sudah ada di
+            database.
+            Ini dilakukan dengan metode seperti <b>update()</b> atau dengan mengubah properti model dan kemudian
+            memanggil
+            <b>save()</b>.
+          </li>
+          <li class="px-6 dark:text-gray-100 mb-6"><b>Delete (Menghapus Data):</b> Menghapus data dari database
+            menggunakan
+            metode
+            <b>delete()</b> atau </b><b>destroy()</b> pada model.
+          </li>
+
+          <!-- 1.1 -->
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6">1. Siapkan Database di MySQL</h1>
+          <p class="mb-4 px-6 dark:text-gray-100">Anda perlu menyiapkan database di MySQL. Sebagai contoh saya
+            menggunakan db_perpustakaan dengn tabel book.
+          </p>
+          <!-- 1.2 -->
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6">2. Tambahkan file Book.php pada models</h1>
+          <p class="mb-4 px-6 dark:text-gray-100">Buat file dengan nama Book.php pada <span
+              class="bg-slate-200">app/Models/Book.php</span> pada laravel
+            anda.
           </p>
           <div
             class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
@@ -111,82 +100,32 @@
             <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
                 <!-- Untuk code jarak space kanan sesuai di editor -->
                 <code id="code-block-1" class="break-all">
-&lt;div class="owl-carousel"&gt;
-  &lt;div class="item"&gt;&lt;img src="image1.jpg" alt="Image 1"&gt;&lt;/div&gt;
-  &lt;div class="item"&gt;&lt;img src="image2.jpg" alt="Image 2"&gt;&lt;/div&gt;
-  &lt;div class="item"&gt;&lt;img src="image3.jpg" alt="Image 3"&gt;&lt;/div&gt;
-  &lt;!-- Tambahkan lebih banyak item sesuai kebutuhan --&gt;
-&lt;/div&gt;</code>
-            </pre>
-            <!-- </div> -->
-            <button
-              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
-              onclick="copyCode('code-block-1')">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
-                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
-              </svg>
-            </button>
-          </div>
-          <!-- 3 -->
-          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 pt-4">3. Inisialisasi Owl Carousel dengan jQuery</h1>
-          <p class="mb-4 px-6 dark:text-gray-100">Gunakan jQuery untuk menginisialisasi carousel setelah dokumen dimuat
-          </p>
-          <div
-            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
-            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
-            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
-                <!-- Untuk code jarak space kanan sesuai di editor -->
-                <code id="code-block-1" class="break-all">
-&lt;script&gt;
-$(document).ready(function(){
-  $(".owl-carousel").owlCarousel({
-    loop: true,           // Mengaktifkan looping
-    margin: 10,           // Jarak antar item
-    nav: true,            // Menampilkan tombol navigasi
-    items: 1,             // Jumlah item yang ditampilkan
-    autoplay: true,      // Mengaktifkan autoplay
-    autoplayTimeout: 3000 // Waktu jeda autoplay (dalam milidetik)
-  });
-});
-&lt;/script&gt;</code>
-            </pre>
-            <!-- </div> -->
-            <button
-              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
-              onclick="copyCode('code-block-1')">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
-                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
-              </svg>
-            </button>
-          </div>
-          <!-- 4 -->
-          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 pt-4">4. Kustomisasi</h1>
-          <p class="mb-4 px-6 dark:text-gray-100">Anda dapat menyesuaikan opsi konfigurasi di atas sesuai kebutuhan
-            Anda. Misalnya, Anda dapat mengubah items untuk menampilkan lebih banyak atau lebih sedikit item, atau
-            mengatur autoplay ke false jika Anda tidak ingin carousel berputar otomatis.
-          </p>
-          <!-- 3 -->
-          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 pt-4">5. Tambahkan CSS (Opsional)</h1>
-          <p class="mb-4 px-6 dark:text-gray-100">Jika perlu, tambahkan CSS tambahan untuk menyesuaikan tampilan
-            carousel sesuai desain Anda.
-          </p>
-          <div
-            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
-            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
-            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
-                <!-- Untuk code jarak space kanan sesuai di editor -->
-                <code id="code-block-1" class="break-all">
-.owl-carousel .item {
-  background: #4a90e2;
-  padding: 30px;
-  margin: 10px;
-  color: #fff;
-  text-align: center;
-  border-radius: 3px;
+&lt;?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Book extends Model
+{
+    use HasFactory;
+    protected $primaryKey = 'Book_ID';
+    protected $fillable = [
+        'Book_ID',
+        'Title',
+        'Author',
+        'Publisher',
+        'Year_Published',
+        'Genre',
+        'ISBN',
+        'Copies_Available',
+        'Pict'
+    ];
+    public $incrementing = false;
+    protected $keyType = 'string';
+
+    public $timestamps = false;
 }</code>
             </pre>
             <!-- </div> -->
@@ -200,119 +139,48 @@ $(document).ready(function(){
               </svg>
             </button>
           </div>
-          <!-- Demo -->
-          <h1 class="text-2xl font-semibold dark:text-gray-100 px-6 mb-4 pt-6">Demo Owl Carousel 2</h1>
-          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 mb-4">1. Basic</h1>
-          <div class="flex justify-center items-center w-64 pt-4 xl:w-full">
-            <!-- Set up your HTML -->
-            <div class="owl-carousel owl-theme w-full max-w-5xl">
-              <div class="item">
-                <img
-                  src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Nature Water" class="w-full h-auto object-cover">
-              </div>
-              <div class="item">
-                <img
-                  src="https://images.unsplash.com/photo-1497752531616-c3afd9760a11?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Nature Water" class="w-full h-auto object-cover">
-              </div>
-              <div class="item">
-                <img
-                  src="https://plus.unsplash.com/premium_photo-1675716926653-8f4529595012?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Nature Water" class="w-full h-auto object-cover">
-              </div>
-              <div class="item">
-                <img
-                  src="https://images.unsplash.com/photo-1480554840075-72cbdabbf689?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Nature Water" class="w-full h-auto object-cover">
-              </div>
-              <div class="item">
-                <img
-                  src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Nature Water" class="w-full h-auto object-cover">
-              </div>
-              <div class="item">
-                <img
-                  src="https://images.unsplash.com/photo-1457140072488-87e5ffde2d77?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Nature Water" class="w-full h-auto object-cover">
-              </div>
-            </div>
-          </div>
+          <li class="px-6 pt-4 dark:text-gray-100 mb-2">use HasFactory;: Menggunakan trait HasFactory untuk memungkinkan
+            pembuatan instance model menggunakan
+            factory.</li>
+          <li class="px-6 dark:text-gray-100 mb-2">protected $primaryKey = 'Book_ID';: Mengatur primary key
+            tabel menjadi Book_ID alih-alih default
+            id.</li>
+          <li class="px-6 dark:text-gray-100 mb-2">$fillable: Menentukan atribut yang dapat diisi secara massal
+            melalui metode seperti create() dan update().
+          </li>
+          <li class="px-6 dark:text-gray-100 mb-2">$incrementing class="px-6 dark:text-gray-100 mb-2">$incrementing
+            = false;: Menandakan bahwa primary key
+            tidak
+            auto-increment.</li>
+          <li class="px-6 dark:text-gray-100 mb-2">$keyType = 'string';: Menentukan tipe primary key sebagai
+            string.</li>
+          <li class="px-6 dark:text-gray-100 mb-2">$timestamps = false;: Menonaktifkan timestamps karena tabel
+            tidak memiliki kolom created_at dan
+            updated_at.</li>
+          <!-- 1.3 -->
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 pt-4">3. Tambahkan BookController.php pada Controller
+          </h1>
+          <p class="mb-4 px-6 dark:text-gray-100">Disini kita membuat Controller yang berfungsi sebagai penghubung
+            antara view dan Models dimana kita membuat class BookController. Tambahkan file BookController.php pada
+            <span class="bg-slate-200">app/Http/Controllers/BookController.php</span> dan isikan dengan ini.
+          </p>
           <div
-            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            class="mb-4 relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
             <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
             <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
                 <!-- Untuk code jarak space kanan sesuai di editor -->
                 <code id="code-block-1" class="break-all">
-&lt;!-- Setup --&gt;
-$('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:3
-        },
-        1000:{
-            items:5
-        }
-    }
-})</code>
-            </pre>
-            <!-- </div> -->
-            <button
-              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
-              onclick="copyCode('code-block-1')">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
-                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
-              </svg>
-            </button>
-          </div>
-          <br>
-          <div
-            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
-            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
-            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
-                <!-- Untuk code jarak space kanan sesuai di editor -->
-                <code id="code-block-1" class="break-all">
-&lt;!-- HTML --&gt;
-&lt;div class="owl-carousel owl-theme"&gt;
-  &lt;div class="item"&gt;
-    &lt;img
-      src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      alt="Nature Water" class="w-full h-auto object-cover"&gt;
-  &lt;/div&gt;
-  &lt;div class="item"&gt;
-    &lt;img
-      src="https://images.unsplash.com/photo-1497752531616-c3afd9760a11?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      alt="Nature Water" class="w-full h-auto object-cover"&gt;
-  &lt;/div&gt;
-  &lt;div class="item"&gt;
-    &lt;img
-      src="https://plus.unsplash.com/premium_photo-1675716926653-8f4529595012?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      alt="Nature Water" class="w-full h-auto object-cover"&gt;
-  &lt;/div&gt;
-  &lt;div class="item"&gt;
-    &lt;img
-      src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      alt="Nature Water" class="w-full h-auto object-cover"&gt;
-  &lt;/div&gt;
-  &lt;div class="item"&gt;
-    &lt;img
-      src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      alt="Nature Water" class="w-full h-auto object-cover"&gt;
-  &lt;/div&gt;
-  &lt;div class="item"&gt;
-    &lt;img
-      src="https://images.unsplash.com/photo-1457140072488-87e5ffde2d77?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      alt="Nature Water" class="w-full h-auto object-cover"&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code>
+&lt;?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Book;
+use Illuminate\Http\Request;
+
+class BookController extends Controller
+{
+
+}</code>
             </pre>
             <!-- </div> -->
             <button
@@ -326,6 +194,166 @@ $('.owl-carousel').owlCarousel({
             </button>
           </div>
 
+          <!-- Read -->
+          <!-- 1 -->
+          <h1 class="text-2xl font-semibold dark:text-gray-100 px-6 mb-4 pt-6">Read (Membaca Data)</h1>
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">1. Tambahkan pada BookController.php</h1>
+          <p class="mb-4 px-6 dark:text-gray-100">Disini kita menambahkan kode pada BookController.php, didalam class
+            BookController kita tambahkan kode berikut.
+          </p>
+          <div
+            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
+            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
+                <!-- Untuk code jarak space kanan sesuai di editor -->
+                <code id="code-block-1" class="break-all">
+  //Menampilkan daftar buku
+  public function bookspage()
+  {
+    $books = Book::all();
+    return view('bookspage', compact('books'));
+  }</code>
+            </pre>
+            <!-- </div> -->
+            <button
+              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
+              onclick="copyCode('code-block-1')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </button>
+          </div>
+          <p class="pt-4 mb-4 px-6 dark:text-gray-100">Disini kita akan menampilkan daftar buku dengan mengambil semua
+            data buku dan mengirim data ke view 'bookspage'. pada <b>bookspage()</b> Fungsi ini mengambil semua data
+            buku menggunakan <b>Book::all()</b> dan mengirimkannya ke view bookspage.
+          </p>
+          <!-- 2 -->
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">2. Buat Route pada web.php</h1>
+          <p class="mb-4 px-6 dark:text-gray-100">kita tambahkan route pada <span
+              class="bg-gray-200">routes/web.php</span> dengan isi.
+          </p>
+          <div
+            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
+            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
+                <!-- Untuk code jarak space kanan sesuai di editor -->
+                <code id="code-block-1" class="break-all">
+use App\Http\Controllers\BookController;
+
+Route::get('books', [BookController::class,'bookspage'])->name('books');</code>
+            </pre>
+            <!-- </div> -->
+            <button
+              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
+              onclick="copyCode('code-block-1')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </button>
+          </div>
+          <p class="pt-4 mb-4 px-6 dark:text-gray-100">Disini kita mengambil dari BookController.php untuk digunkaan
+            diroute dan mendifinisikan rute GET /books yang memamnggil fungsi bookspage dari Controller. Rute ini diberi
+            nama books
+          </p>
+          <!-- 3 -->
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">3. Buat View dengan nama bookspage.blade.php</h1>
+          <p class="mb-4 px-6 dark:text-gray-100">kita buat file bookspage.blade.php untuk tampilannya pada<span
+              class="bg-gray-200">resources/views/</span> dan masukan kode berikut dalam html anda.
+          </p>
+          <div
+            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
+            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
+                <!-- Untuk code jarak space kanan sesuai di editor -->
+                <code id="code-block-1" class="break-all">
+&lt;!-- Book List --&gt;
+&lt;div class="overflow-hidden"&gt;
+    &lt;!-- Table Header --&gt;
+    &lt;div class="grid grid-cols-10 font-medium text-gray-700 py-3 bg-[#EFDBCD] shadow-md rounded-lg"&gt;
+        &lt;div class="col-span-1 text-center"&gt;No&lt;/div&gt;
+        &lt;div class="col-span-2 text-center"&gt;Judul&lt;/div&gt;
+        &lt;div class="col-span-2 text-center"&gt;Pengarang&lt;/div&gt;
+        &lt;div class="col-span-2 text-center"&gt;Penerbit&lt;/div&gt;
+        &lt;div class="col-span-2 text-center"&gt;Genre&lt;/div&gt;
+        &lt;div class="col-span-1 text-center"&gt;Tersedia&lt;/div&gt;
+        &lt;div class="col-span-2 text-center"&gt;Aksi&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="py-2"&gt;&lt;/div&gt;
+    &lt;!-- Table Content --&gt;
+    &lt;div class="overflow-y-auto max-h-96"&gt;
+        @foreach($books as $index =&gt; $book)
+        &lt;div class="py-1"&gt;
+            &lt;div class="grid grid-cols-10 bg-[#EFDBCD] py-2 shadow-md rounded-lg"&gt;
+                &lt;div class="col-span-1 text-center"&gt;{{ $index + 1 }}&lt;/div&gt;
+                &lt;div class="col-span-2 text-center"&gt;{{ $book-&gt;Title }}&lt;/div&gt;
+                &lt;div class="col-span-2 text-center"&gt;{{ $book-&gt;Author }}&lt;/div&gt;
+                &lt;div class="col-span-2 text-center"&gt;{{ $book-&gt;Publisher }}&lt;/div&gt;
+                &lt;div class="col-span-2 text-center"&gt;{{ $book-&gt;Genre }}&lt;/div&gt;
+                &lt;div class="col-span-1 text-center"&gt;{{ $book-&gt;Copies_Available }} Buku&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        @endforeach
+    &lt;/div&gt;
+&lt;/div&gt;</code>
+            </pre>
+            <!-- </div> -->
+            <button
+              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
+              onclick="copyCode('code-block-1')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </button>
+          </div>
+          <p class="pt-4 mb-4 px-6 dark:text-gray-100">Disini kita menggunakan loop <b>@foreach</b> dan diakhiri dengan
+            <b>@endforeach</b> untuk menampilkan
+            daftar
+            buku yang diambil dari controller. kita menggunakan <b>$index + 1</b> untuk penomoran baris. Sebelumnya kita
+            inisialisasi dulu pada <b>$books jadi $book</b>. Lalu kita tinggal mengisikan isi dari kolom sesuai dengan
+            yang dibutuhkan. Dengan ini buku dapat ditampilkan.
+          </p>
+
+          <!-- Create-->
+          <!-- 1 -->
+          <h1 class="text-2xl font-semibold dark:text-gray-100 px-6 mb-4 pt-6">Create (Membuat Data)</h1>
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">1. Tambahkan pada BookController.php</h1>
+          <p class="mb-4 px-6 dark:text-gray-100">Disini kita menambahkan kode pada BookController.php, didalam class
+            BookController kita tambahkan kode berikut.
+          </p>
+          <div
+            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
+            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
+                <!-- Untuk code jarak space kanan sesuai di editor -->
+                <code id="code-block-1" class="break-all">
+  //Menampilkan daftar buku
+  public function bookspage()
+  {
+    $books = Book::all();
+    return view('bookspage', compact('books'));
+  }</code>
+            </pre>
+            <!-- </div> -->
+            <button
+              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
+              onclick="copyCode('code-block-1')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </button>
+          </div>
+          <p class="pt-4 mb-4 px-6 dark:text-gray-100">Disini kita akan menampilkan daftar buku dengan mengambil semua
+            data buku dan mengirim data ke view 'bookspage'. pada <b>bookspage()</b> Fungsi ini mengambil semua data
+            buku menggunakan <b>Book::all()</b> dan mengirimkannya ke view bookspage.
+          </p>
           <!-- Akhir -->
         </div>
       </div>
