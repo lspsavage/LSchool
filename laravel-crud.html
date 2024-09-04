@@ -55,13 +55,18 @@
       <div class=" mx-auto bg-white shadow-lg rounded-lg overflow-hidden dark:bg-gray-800">
         <!-- Contain 2 -->
         <div class="p-6 w-full">
-          <ul class="mb-6 px-6 dark:text-gray-100">CRUD adalah singkatan dari Create, Read, Update, dan Delete. Ini
+          <ul class="mb-6 px-6 dark:text-gray-100" id="crud">CRUD adalah singkatan dari Create, Read, Update, dan
+            Delete. Ini
             adalah operasi dasar yang digunakan untuk mengelola data di aplikasi web, dan Laravel menyediakan cara yang
             sangat efisien untuk menangani CRUD melalui Eloquent ORM (Object-Relational Mapping). Berikut adalah
             gambaran umum tentang masing-masing operasi CRUD:
           </ul>
           <li class="px-6 dark:text-gray-100 mb-2"><b>Create (Membuat Data):</b> Menambahkan data baru ke database. Di
-            Laravel, ini dilakukan menggunakan metode seperti <b>create()</b> atau <b>save()</b> pada model.</li>
+            Laravel, ini dilakukan menggunakan metode seperti <b>create()</b> atau <b>save()</b> pada model.
+            <a href="#create">
+              <ul class="px-6 pt-2 text-blue-500"> - Create</ul>
+            </a>
+          </li>
           <li class="px-6 dark:text-gray-100 mb-2"><b>Read (Membaca Data):</b> Mengambil data dari database.
             Ini bisa berupa semua data atau data spesifik berdasarkan kondisi tertentu. Metode seperti <b>all(), find(),
               findOrFail(),
@@ -83,6 +88,9 @@
             Ini dilakukan dengan metode seperti <b>update()</b> atau dengan mengubah properti model dan kemudian
             memanggil
             <b>save()</b>.
+            <a href="#update">
+              <ul class="px-6 pt-2 text-blue-500"> - Update</ul>
+            </a>
           </li>
           <li class="px-6 dark:text-gray-100 mb-6"><b>Delete (Menghapus Data):</b> Menghapus data dari database
             menggunakan
@@ -326,6 +334,13 @@ Route::get('books', [BookController::class,'bookspage'])->name('books');</code>
             inisialisasi dulu pada <b>$books jadi $book</b>. Lalu kita tinggal mengisikan isi dari kolom sesuai dengan
             yang dibutuhkan. Dengan ini buku dapat ditampilkan.
           </p>
+          <!-- Double Upward Arrow Icon with Scroll Functionality -->
+          <a href="#crud" class="flex justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 dark:text-gray-300 cursor-pointer"
+              fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 11l7-7 7 7M5 19l7-7 7 7" />
+            </svg>
+          </a>
 
           <!-- Read with id-->
           <!-- 1 -->
@@ -480,6 +495,13 @@ Route::get('books/{id}/detail', [BookController::class, 'show'])->name('books.de
           <p class="pt-4 mb-4 px-6 dark:text-gray-100">Dengan route ke books kita bisa kembali ke tampilan awal atau
             daftar buku.
           </p>
+          <!-- Double Upward Arrow Icon with Scroll Functionality -->
+          <a href="#crud" class="flex justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 dark:text-gray-300 cursor-pointer"
+              fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 11l7-7 7 7M5 19l7-7 7 7" />
+            </svg>
+          </a>
 
           <!-- Read: conversi date time  -->
           <!-- 1 -->
@@ -586,6 +608,392 @@ public function boot()
               </svg>
             </button>
           </div>
+          <!-- 4 -->
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 pt-4">4. Date time di Controller</h1>
+          <p class="mb-4 px-6 dark:text-gray-100">Jika anda ingin mengubahnya <b>diController</b> anda dapat
+            menggunakan
+            kode
+            seperti dibawah ini.
+          </p>
+          <div
+            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
+            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
+                <!-- Untuk code jarak space kanan sesuai di editor -->
+                <code id="code-block-1" class="break-all">
+&lt;?php
+
+namespace App\Http\Controllers;
+
+use Carbon\Carbon;
+use App\Models\Member;
+use Illuminate\Http\Request;
+
+class MemberController extends Controller
+{
+
+  public function memberpage () 
+  {
+    $members = Member::all();
+
+    // Format tanggal menggunakan Carbon
+    foreach ($loans as $loan) {
+    $members->formatted_date = Carbon::parse($members->Membership_Date)->translatedFormat('j F Y');
+    }
+    return view('members/memberlistpage', compact('members'));
+
+  }
+
+}</code>
+            </pre>
+            <!-- </div> -->
+            <button
+              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
+              onclick="copyCode('code-block-1')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </button>
+          </div>
+          <p class="mb-4 pt-4 px-6 dark:text-gray-100">Untuk tampilan di <b>View</b> dapat menggunakan kode seperti ini.
+          </p>
+          <div
+            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
+            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
+                <!-- Untuk code jarak space kanan sesuai di editor -->
+                <code id="code-block-1" class="break-all">
+&lt;p class="text-lg"&gt;&lt;span class="font-medium"&gt;Bergabung Sejak: &lt;/span&gt; {{ members->$formatted_date }}&lt;/p&gt;</code>;
+            </pre>
+            <!-- </div> -->
+            <button
+              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
+              onclick="copyCode('code-block-1')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </button>
+          </div>
+          <!-- Double Upward Arrow Icon with Scroll Functionality -->
+          <a href="#crud" class="flex justify-center pt-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 dark:text-gray-300 cursor-pointer"
+              fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 11l7-7 7 7M5 19l7-7 7 7" />
+            </svg>
+          </a>
+
+          <!-- Create  -->
+          <!-- 1 -->
+          <h1 id="create" class="text-2xl font-semibold dark:text-gray-100 px-6 mb-4 pt-6">Create (Membuat Data)
+          </h1>
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">1. Menambahkan file di Controller</h1>
+          <p class="mb-4 px-6 dark:text-gray-100">Dalam Controller kita tambahkan method <span
+              class="bg-gray-200 dark:bg-slate-500">create</span> untuk menampilkan view
+            dari form tambah data. Dan <span class="bg-gray-200 dark:bg-slate-500">store</span> untuk menyimpan data itu
+            sendiri.
+          </p>
+          <div
+            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
+            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
+                <!-- Untuk code jarak space kanan sesuai di editor -->
+                <code id="code-block-1" class="break-all">
+  public function create()
+  {
+    return view('books/bookscreate');
+  }
+
+  public function bookstore(Request $request)
+  {
+     // Validasi input form
+     $request->validate([
+      'Title' => 'required|string',
+      'Author' => 'required|string',
+      'Publisher' => 'required|string',
+      'Year_Published' => 'required|integer',
+      'Genre' => 'required|string',
+      'ISBN' => 'required|string',
+      'Copies_Available' => 'required|integer',
+     ]);
+
+
+     //Buat buku baru
+     Book::create([
+      'Book_ID' => $bookID,
+      'Title' => $request->Title,
+      'Author' => $request->Author,
+      'Publisher' => $request->Publisher,
+      'Year_Published' => $request->Year_Published,
+      'Genre' => $request->Genre,
+      'ISBN' => $request->ISBN,
+      'Copies_Available' => $request->Copies_Available,
+     ]);
+
+     return redirect()->route('books')->with('success', 'Book added successfully.');
+  }</code>
+            </pre>
+            <!-- </div> -->
+            <button
+              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
+              onclick="copyCode('code-block-1')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </button>
+          </div>
+          <p class="pt-4 mb-4 px-6 dark:text-gray-100">Didalam store kita buat untuk validasi input form pada view dan
+            hasil validasi digunakan pada pembuatan data.
+          </p>
+          <!-- 2 -->
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">2. Mengatur pada route web.php</h1>
+          <p class="mb-4 px-6 dark:text-gray-100">Dalam route kita atur menjadi seperti ini.
+          </p>
+          <div
+            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
+            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
+                <!-- Untuk code jarak space kanan sesuai di editor -->
+                <code id="code-block-1" class="break-all">
+// Route untuk halaman tambah buku
+Route::get('/books/create', [BookController::class, 'create'])->name('books.create');
+Route::post('/books', [BookController::class, 'bookstore'])->name('books.store');</code>
+            </pre>
+            <!-- </div> -->
+            <button
+              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
+              onclick="copyCode('code-block-1')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </button>
+          </div>
+          <p class="pt-4 mb-4 px-6 dark:text-gray-100">Disini kita membuat dua route untuk penambahan data. Yang pertama
+            digunakan untuk tampilan dan yang kedua digunakan untuk jalur data. Jadi disini menggunakan get dan post.
+          </p>
+          <!-- 3 -->
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">3. Mengatur pada tampilan create.blade</h1>
+          <p class="mb-4 px-6 dark:text-gray-100">Dalam view create.blade kita harus mengatur pada form dalam memasukan
+            data.
+          </p>
+          <div
+            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
+            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
+                <!-- Untuk code jarak space kanan sesuai di editor -->
+                <code id="code-block-1" class="break-all">
+&lt;form action="{{ route('books.store') }}" method="POST" enctype="multipart/form-data"&gt;
+    @csrf
+
+    &lt;!-- Title --&gt;
+    &lt;div class="mb-4"&gt;
+    &lt;label for="Title" class="block text-gray-700 mb-2"&gt;Judul Buku&lt;/label&gt;
+    &lt;input type="text" id="Title" name="Title" class="w-full p-2 border border-gray-300 rounded-lg" required&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Author --&gt;
+    &lt;div class="mb-4"&gt;
+    &lt;label for="Author" class="block text-gray-700 mb-2"&gt;Penulis&lt;/label&gt;
+    &lt;input type="text" id="Author" name="Author" class="w-full p-2 border border-gray-300 rounded-lg" required&gt;
+    &lt;/div&gt;
+
+		//Lanjutan data seperti diatas
+		//.......                
+
+    &lt;!-- Submit Button --&gt;
+    &lt;div class="flex space-x-4"&gt;
+        &lt;button type="submit" class="bg-emerald-400 text-white px-4 py-2 rounded-lg shadow hover:bg-emerald-500"&gt;Tambah Buku&lt;/button&gt;
+        &lt;a href="{{ route('books') }}" class="bg-red-400 text-white px-4 py-2 rounded-lg shadow hover:bg-red-500"&gt;Batal&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code>
+            </pre>
+            <!-- </div> -->
+            <button
+              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
+              onclick="copyCode('code-block-1')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </button>
+          </div>
+          <p class="pt-4 mb-4 px-6 dark:text-gray-100">Disini kita membuat route pada action form menjadi store dengan
+            method POST. Kemudian untuk menandai input agar sesuai dengan data kita menggunakan id. Dan pada button
+            tambah buku kita menggunakan type submit untuk mengirim data ke db.
+          </p>
+          <!-- Double Upward Arrow Icon with Scroll Functionality -->
+          <a href="#crud" class="flex justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 dark:text-gray-300 cursor-pointer"
+              fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 11l7-7 7 7M5 19l7-7 7 7" />
+            </svg>
+          </a>
+
+          <!-- Update  -->
+          <!-- 1 -->
+          <h1 id="update" class="text-2xl font-semibold dark:text-gray-100 px-6 mb-4 pt-6">Update (Memperbarui Data)
+          </h1>
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">1. Menambahkan file di Controller</h1>
+          <p class="mb-4 px-6 dark:text-gray-100">Hampir sama seperti create data, Dalam Controller kita tambahkan
+            method <span class="bg-gray-200 dark:bg-slate-500">edit</span> untuk menampilkan view
+            dari form tambah data. Dan <span class="bg-gray-200 dark:bg-slate-500">update</span> untuk menyimpan data
+            yang diubah.
+          </p>
+          <div
+            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
+            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
+                <!-- Untuk code jarak space kanan sesuai di editor -->
+                <code id="code-block-1" class="break-all">
+  public function edit($id)
+   {
+      $books = Book::where('Book_ID', $id)->firstOrFail();
+      return view('books/booksupdate', compact('books'));
+   }
+
+  public function update(Request $request, $id)
+  {
+      $books = Book::where('Book_ID', $id)->firstOrFail();
+
+      $request->validate([
+          'Title' => 'required|string',
+          'Author' => 'required|string',
+          'Publisher' => 'required|string',
+          'Year_Published' => 'required|integer',
+          'Genre' => 'required|string',
+          'ISBN' => 'required|string',
+          'Copies_Available' => 'required|integer',
+      ]);
+
+
+      // Update other fields
+      $books->Title = $request->Title;
+      $books->Author = $request->Author;
+      $books->Publisher = $request->Publisher;
+      $books->Year_Published = $request->Year_Published;
+      $books->Genre = $request->Genre;
+      $books->ISBN = $request->ISBN;
+      $books->Copies_Available = $request->Copies_Available;
+      
+      $books->save();
+
+      return redirect()->route('books.detail', ['id' => $books->Book_ID])->with('success', 'Data buku berhasil diperbarui.');
+  }</code>
+            </pre>
+            <!-- </div> -->
+            <button
+              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
+              onclick="copyCode('code-block-1')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </button>
+          </div>
+          <p class="pt-4 mb-4 px-6 dark:text-gray-100">Disini kita menggunakan request, jika pada create hanya
+            menggunakan validate pada update menggunakan request. Dan juga pada books memvalidasi jika id adalah
+            Book_ID.
+          </p>
+          <!-- 2 -->
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">2. Mengatur pada route web.php</h1>
+          <p class="mb-4 px-6 dark:text-gray-100">Dalam route kita atur menjadi seperti ini.
+          </p>
+          <div
+            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
+            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
+                <!-- Untuk code jarak space kanan sesuai di editor -->
+                <code id="code-block-1" class="break-all">
+// Route untuk halaman update buku
+Route::get('/books/{id}/edit', [BookController::class, 'edit'])->name('books.edit');
+Route::put('/books/{id}', [BookController::class, 'update'])->name('books.update');</code>
+            </pre>
+            <!-- </div> -->
+            <button
+              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
+              onclick="copyCode('code-block-1')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </button>
+          </div>
+          <p class="pt-4 mb-4 px-6 dark:text-gray-100">Disini kita membuat dua route untuk update data. Yang pertama
+            digunakan untuk tampilan dan yang kedua digunakan untuk jalur data. Jadi disini menggunakan get dan put.
+            Disini menggunakan id karena kita akan mengubah hanya satu data secara uniq maka menggunakan id.
+          </p>
+          <!-- 3 -->
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">3. Mengatur pada tampilan create.blade</h1>
+          <p class="mb-4 px-6 dark:text-gray-100">Dalam view create.blade kita harus mengatur pada form dalam memasukan
+            data.
+          </p>
+          <div
+            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
+            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
+                <!-- Untuk code jarak space kanan sesuai di editor -->
+                <code id="code-block-1" class="break-all">
+&lt;form action="{{ route('books.update', ['id' =&gt; $books-&gt;Book_ID]) }}" method="POST" enctype="multipart/form-data"&gt;
+    @csrf
+    @method('PUT')
+
+    &lt;!-- Title --&gt;
+    &lt;div class="mb-4"&gt;
+        &lt;label for="title" class="block text-gray-700 mb-2"&gt;Judul Buku&lt;/label&gt;
+        &lt;input type="text" id="title" name="Title" value="{{ old('Title', $books-&gt;Title) }}" class="w-full p-2 border border-gray-300 rounded-lg" required&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Author --&gt;
+    &lt;div class="mb-4"&gt;
+        &lt;label for="author" class="block text-gray-700 mb-2"&gt;Pengarang&lt;/label&gt;
+        &lt;input type="text" id="author" name="Author" value="{{ old('Author', $books-&gt;Author) }}" class="w-full p-2 border border-gray-300 rounded-lg" required&gt;
+    &lt;/div&gt;
+
+    //lanjutan data seperti di atas
+
+    &lt;!-- Submit Button --&gt;
+    &lt;div class="flex space-x-4"&gt;
+        &lt;div class="mt-6"&gt;
+            &lt;button type="submit" class="bg-emerald-400 text-white px-4 py-2 rounded-lg shadow hover:bg-emerald-500"&gt;Update&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;a href="{{ route('books.detail', ['id' =&gt; $books-&gt;Book_ID]) }}" class="mt-6"&gt;
+            &lt;div class="bg-red-400 text-white px-4 py-2 rounded-lg shadow hover:bg-red-500"&gt;Cancel&lt;/div&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code>
+            </pre>
+            <!-- </div> -->
+            <button
+              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
+              onclick="copyCode('code-block-1')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </button>
+          </div>
+          <p class="pt-4 mb-4 px-6 dark:text-gray-100">Disini penjelasan hampir sama seperti create data, hanya
+            menggunakan old pada value untuk menampilkan data sebelum dirubah pada view.
+          </p>
+          <!-- Double Upward Arrow Icon with Scroll Functionality -->
+          <a href="#crud" class="flex justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 dark:text-gray-300 cursor-pointer"
+              fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 11l7-7 7 7M5 19l7-7 7 7" />
+            </svg>
+          </a>
+
 
           <!-- Akhir -->
         </div>
