@@ -77,19 +77,6 @@ fetch("sidebar.html")
       document.getElementById("sidebar").classList.toggle("open");
     });
 
-    // // JavaScript untuk toggle mode
-    // const modeToggle = document.getElementById("modeToggle");
-    // const iconLight = document.getElementById("icon-light");
-    // const iconDark = document.getElementById("icon-dark");
-
-    // if (modeToggle) {
-    //   modeToggle.addEventListener("click", () => {
-    //     document.body.classList.toggle("dark");
-    //     iconLight.classList.toggle("hidden");
-    //     iconDark.classList.toggle("hidden");
-    //   });
-    // }
-
     // Kode untuk fetch sidebar
     const hamburger = document.getElementById("hamburger");
     const mobileMenu = document.getElementById("mobileMenu");
@@ -100,6 +87,17 @@ fetch("sidebar.html")
       });
     }
   });
+
+// Event listener untuk menutup sidebar ketika klik di luar sidebar
+document.addEventListener("click", function (e) {
+  const sidebar = document.getElementById("sidebar");
+  const burgerMenu = document.getElementById("burgerMenu");
+
+  // Pastikan klik bukan pada sidebar atau tombol burger menu
+  if (!sidebar.contains(e.target) && !burgerMenu.contains(e.target)) {
+    sidebar.classList.remove("open");
+  }
+});
 
 // Setup awal ketika halaman dimuat
 document.addEventListener("DOMContentLoaded", initDarkMode);

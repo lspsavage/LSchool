@@ -19,7 +19,7 @@
   </div>
 
   <!-- Main Content Area -->
-  <div class="flex-1 flex flex-col">
+  <div id="content" class="flex-1 flex flex-col">
     <!-- Top Navbar -->
     <header class="bg-white shadow p-4 dark:bg-gray-800 flex items-center justify-between">
       <div class="flex items-center">
@@ -96,6 +96,9 @@
             menggunakan
             metode
             <b>delete()</b> atau </b><b>destroy()</b> pada model.
+            <a href="#delete">
+              <ul class="px-6 pt-2 text-blue-500"> - Delete</ul>
+            </a>
           </li>
 
           <!-- 1.1 -->
@@ -985,6 +988,116 @@ Route::put('/books/{id}', [BookController::class, 'update'])->name('books.update
           </div>
           <p class="pt-4 mb-4 px-6 dark:text-gray-100">Disini penjelasan hampir sama seperti create data, hanya
             menggunakan old pada value untuk menampilkan data sebelum dirubah pada view.
+          </p>
+          <!-- Double Upward Arrow Icon with Scroll Functionality -->
+          <a href="#crud" class="flex justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 dark:text-gray-300 cursor-pointer"
+              fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 11l7-7 7 7M5 19l7-7 7 7" />
+            </svg>
+          </a>
+          <!-- Delete  -->
+          <!-- 1 -->
+          <h1 id="delete" class="text-2xl font-semibold dark:text-gray-100 px-6 mb-4 pt-6">Delete (Menghapus Data)
+          </h1>
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">1. Menambahkan file di Controller</h1>
+          <p class="mb-4 px-6 dark:text-gray-100">Dalam Controller kita tambahkan
+            method <span class="bg-gray-200 dark:bg-slate-500">destroy</span> dan id untuk menuju data yang akan
+            dihapus. Seperti dibawah ini.
+          </p>
+          <div
+            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
+            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
+                <!-- Untuk code jarak space kanan sesuai di editor -->
+                <code id="code-block-1" class="break-all">
+   public function destroy($id)
+{
+    // Temukan buku berdasarkan ID
+    $books = Book::where('Book_ID', $id)->firstOrFail();
+
+    // Hapus buku dari database
+    $books->delete();
+
+    return redirect()->route('books')->with('success', 'Buku berhasil dihapus.');
+}</code>
+            </pre>
+            <!-- </div> -->
+            <button
+              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
+              onclick="copyCode('code-block-1')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </button>
+          </div>
+          <p class="pt-4 mb-4 px-6 dark:text-gray-100">Disini kita memanggil tabel buku dimana id adalah data yang akan
+            dipilih. Kemudian kita menggunakan<span class="bg-gray-200 dark:bg-slate-500"> delete()</span> yang bawaan
+            dari laravel untuk menghapus data. Kemudian kita route ke tampiulan books setelah berhasil.
+          </p>
+          <!-- 2 -->
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">2. Mengatur pada route web.php</h1>
+          <p class="mb-4 px-6 dark:text-gray-100">Dalam route kita atur menjadi seperti ini.
+          </p>
+          <div
+            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
+            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
+                <!-- Untuk code jarak space kanan sesuai di editor -->
+                <code id="code-block-1" class="break-all">
+// Route untuk halaman delete buku
+Route::delete('/books/{id}', [BookController::class, 'destroy'])->name('books.destroy');</code>
+            </pre>
+            <!-- </div> -->
+            <button
+              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
+              onclick="copyCode('code-block-1')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </button>
+          </div>
+          <p class="pt-4 mb-4 px-6 dark:text-gray-100">Disini kita membuat route untuk delete. Dimana kita bukan
+            menggunakan get ataupun post tetapi menggunakan <span class="bg-gray-200 dark:bg-slate-500"> delete.</span>
+            Kemudian untuk route menggunakan <span class="bg-gray-200 dark:bg-slate-500"> books/{id}</span> yaitu id
+            yang dituju.
+          </p>
+          <!-- 3 -->
+          <h1 class="text-xl font-semibold dark:text-gray-100 px-6 ">3. Mengatur pada tampilan create.blade</h1>
+          <p class="mb-4 px-6 dark:text-gray-100">Dalam view create.blade kita harus mengatur pada form dalam memasukan
+            data.
+          </p>
+          <div
+            class="relative code-container bg-gray-100 pt-4 px-4 border-l-4 border-blue-500 rounded-lg mx-auto w-full max-w-5xl dark:bg-gray-500 dark:text-gray-100">
+            <!-- <div class="overflow-x-auto bg-gray-200 p-4 rounded-lg dark:bg-gray-600"> -->
+            <pre class="rounded-lg leading-normal whitespace-pre-wrap -mt-10 ml-6 text-xs sm:text-sm md:text-base">
+                <!-- Untuk code jarak space kanan sesuai di editor -->
+                <code id="code-block-1" class="break-all">
+&lt;form id="deleteForm" action="{{ route('books.destroy', ['id' =&gt; $books-&gt;Book_ID]) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus buku ini?');"&gt;
+    @csrf
+    @method('DELETE')
+    &lt;button type="button" class="bg-red-500 text-white px-4 py-2 rounded-xl shadow-lg hover:bg-red-600"&gt;Delete&lt;/button&gt;
+&lt;/form&gt;</code>
+            </pre>
+            <!-- </div> -->
+            <button
+              class="copy-button absolute top-2 right-2 bg-gray-600 text-white rounded px-2 py-1 text-xs md:text-sm"
+              onclick="copyCode('code-block-1')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                stroke="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </button>
+          </div>
+          <p class="pt-4 mb-4 px-6 dark:text-gray-100">disini kita menambahkan form pada tombol delete. pada form berisi
+            id dan action. dengan method POST. Dan jangan lupa untuk menambahkan <span
+              class="bg-gray-200 dark:bg-slate-500"> @csrf</span> dan<span class="bg-gray-200 dark:bg-slate-500">
+              @method.</span>
           </p>
           <!-- Double Upward Arrow Icon with Scroll Functionality -->
           <a href="#crud" class="flex justify-center">
